@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./ext-3.3.0/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
+    <script src="./ext-3.3.0/adapter/ext/ext-base.js" type="text/javascript"></script>
+    <script src="./ext-3.3.0/ext-all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       Ext.onReady(function() {
+        var tabPanel = new Ext.TabPanel({
+        renderTo: 'inputF',
+        id:'searchB',
+        width:600,
+        height: 65,
+       
+        });
+        tabPanel.add({
+        title: '国内版',
+        xtype: 'field'
+        });
+        tabPanel.add({
+        title: '国际版',      
+        xtype: 'field' 
+        });
+        tabPanel.activate(0);  
+        var bingSeach=new Ext.Container({
+            layout: 'column',
+            renderTo:'test',
+            items:[
+                new Ext.BoxComponent({
+                    renderTo:'logo',
+                    id:'logO',
+                    width:80,
+                    height:63,
+                    autoEl: {
+		               tag: 'img',
+		               src: 'pin.png'
+	                }
+
+                }),
+                tabPanel,
+                new Ext.Button({
+                    renderTo:'search',
+                    id:'se',
+                    width:30,
+                    height:30,
+                    scale: 'large',
+                    icon:'se.png',
+                })
+            ]
+        })
+    
+    });
+     
+    </script>
+    <style>
+         #searchB ul {
+             background: transparent;
+             color: black;
+             border: none;
+         }
+         
+         #searchB div{
+             background: transparent;
+             color: black;
+             border: none;
+         }
+         
+         #searchB li {
+             background: transparent;
+             color: black;
+             border: none;
+         }
+         #se{
+           margin-top: 27px;
+        
+
+         }
+         
+  
+
+    </style>
+</head>
+<body background="imgTwo.jpg">
+    <div id="test" style="padding-left: 200px; padding-top: 160px">
+        <div id="logo"> </div>
+        <div id="inputF"></div>
+        <div id="search"></div>
+    </div> 
+</body>
+</html>

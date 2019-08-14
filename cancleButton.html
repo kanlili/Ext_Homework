@@ -1,0 +1,47 @@
+<html>
+<head>
+<link href="./ext-3.3.0/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
+<script src="./ext-3.3.0/adapter/ext/ext-base.js" type="text/javascript"></script>
+<script src="./ext-3.3.0/ext-all.js" type="text/javascript"></script>
+<script type="text/javascript">
+   Ext.onReady(function() {
+   Ext.ns('com.ita');
+   com.ita.cancelButton=Ext.extend(Ext.Button,{
+       text:'Cancel',
+       cls:'red-button',
+       //style: 'background-color: red;',
+       initComponent:function(){
+           com.ita.cancelButton.superclass.initComponent.call(this);
+           this.on('click',this.onButtonClick,this);
+       },
+       onButtonClick:function(oEvent){
+           Ext.Msg.alert('cancel button','this is cancel button');
+       }
+   });
+   Ext.reg('com.ita.cancelButton',com.ita.cancelButton);
+   var panel=new Ext.Panel({
+     renderTo:'test',
+     items:[
+         {
+             xtype:'com.ita.cancelButton',
+            //  style:{
+            //      marginBottom:'10px'
+            //  }
+         }
+     ]
+   });
+   panel.render();
+});
+</script>
+ <style type="text/css">
+        .red-button{
+            background-color : red;
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+   <div id="test"></div>
+</body>
+</html>
